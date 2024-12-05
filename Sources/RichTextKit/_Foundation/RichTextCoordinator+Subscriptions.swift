@@ -65,11 +65,12 @@ private extension RichTextCoordinator {
             self?.setIsEditable(to: $0)
         }
     }
-
+// Commented out because of rare case of infinity loop
+// TODO: register issue on github if this comment solve the problem
     func subscribeToIsEditingText() {
-        subscribe(to: context.$isEditingText) { [weak self] in
-            self?.setIsEditing(to: $0)
-        }
+//        subscribe(to: context.$isEditingText) { [weak self] in
+//            self?.setIsEditing(to: $0)
+//        }
     }
 
     // TODO: Not done yet
