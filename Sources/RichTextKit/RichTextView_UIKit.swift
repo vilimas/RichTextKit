@@ -395,7 +395,10 @@ public extension RichTextView {
     /// Get the rich text managed by the text view.
     var attributedString: NSAttributedString {
         get { super.attributedText ?? NSAttributedString(string: "") }
-        set { attributedText = newValue }
+        set {
+            guard super.attributedText != newValue else { return }
+            super.attributedText = newValue
+        }
     }
 }
 

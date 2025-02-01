@@ -33,7 +33,6 @@ open class RichTextCoordinator: NSObject {
         textView: RichTextView,
         richTextContext: RichTextContext
     ) {
-        textView.attributedString = text.wrappedValue
         self.text = text
         self.textView = textView
         self.context = richTextContext
